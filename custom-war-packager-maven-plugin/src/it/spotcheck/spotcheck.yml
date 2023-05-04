@@ -1,0 +1,22 @@
+bundle:
+  groupId: "io.github.oleg-nenashev"
+  artifactId: "mywar"
+  description: "Just a WAR auto-generation-sample"
+buildSettings:
+  docker:
+    base: "jenkins/jenkins:2.107.3"
+war:
+  groupId: "org.jenkins-ci.main"
+  artifactId: "jenkins-war"
+  source:
+    version: 2.107.3
+plugins:
+  - groupId: "org.jenkins-ci.plugins"
+    artifactId: "matrix-project"
+    source:
+      version: 1.9
+  - groupId: "org.jenkins-ci.plugins"
+    artifactId: "durable-task"
+    source:
+      git: https://github.com/jenkinsci/durable-task-plugin.git
+      commit: d6258dd63384de5ec261e7374028fd6f4a106dd0

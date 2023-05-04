@@ -1,0 +1,16 @@
+/demo
+/test
+/jenkinsfile-runner-tests
+target
+tmp
+*.log
+
+# IDEA
+*.iml
+.idea
+
+# VS Code
+.project
+.settings
+.classpath
+.factorypath

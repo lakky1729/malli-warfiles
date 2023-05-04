@@ -1,0 +1,30 @@
+bundle:
+  groupId: "io.github.oleg-nenashev"
+  artifactId: "mywar"
+  vendor: "Custom WAR Packager"
+  title: "MyWAR (built by Custom WAR Packager)"
+  description: "Just a WAR auto-generation-sample"
+war:
+  groupId: "org.jenkins-ci.main"
+  artifactId: "jenkins-war"
+  source:
+    version: 2.107
+plugins:
+  - groupId: "org.jenkins-ci.plugins"
+    artifactId: "matrix-project"
+    source:
+      version: 1.9
+  - groupId: "org.jenkins-ci.plugins"
+    artifactId: "durable-task"
+    source:
+      version: 1.26
+libPatches:
+  - groupId: "org.jenkins-ci"
+    artifactId: "task-reactor"
+    source:
+      git: https://github.com/jenkinsci/lib-task-reactor.git
+systemProperties: {
+    jenkins.model.Jenkins.slaveAgentPort: "50000",
+    jenkins.model.Jenkins.slaveAgentPortEnforce: "true"}
+
+

@@ -1,0 +1,19 @@
+/test
+target
+demo/**/.build
+tmp
+
+*.log
+jenkinsfile-runner-tests/.testing
+jenkinsfile-runner-tests/.jenkinsfile-runner-test-framework/
+jenkinsfile-runner-tests/cwp.jar
+
+# IDEA
+*.iml
+.idea
+
+# VS Code
+.project
+.settings
+.classpath
+.factorypath

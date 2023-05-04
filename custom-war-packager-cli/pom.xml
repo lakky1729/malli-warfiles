@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+
+  <parent>
+    <groupId>io.jenkins.tools.custom-war-packager</groupId>
+    <artifactId>parent-pom</artifactId>
+    <version>2.0-alpha-7-SNAPSHOT</version>
+  </parent>
+
+  <artifactId>custom-war-packager-cli</artifactId>
+  <packaging>jar</packaging>
+  <version>2.0-alpha-7-SNAPSHOT</version>
+
+  <name>Jenkins Custom WAR Packager CLI</name>
+  <description>Generates a Custom WAR file from the specified YAML configuration file</description>
+  <dependencies>
+
+    <dependency>
+      <groupId>args4j</groupId>
+      <artifactId>args4j</artifactId>
+      <version>2.33</version>
+    </dependency>
+
+    <dependency>
+      <groupId>io.jenkins.tools.custom-war-packager</groupId>
+      <artifactId>custom-war-packager-lib</artifactId>
+      <version>${project.version}</version>
+    </dependency>
+
+  </dependencies>
+  
+  <build>
+    <plugins>
+      <plugin>
+        <artifactId>maven-assembly-plugin</artifactId>
+        <!-- version specified in parent pom -->
+        <executions>
+          <execution>
+            <goals>
+              <goal>single</goal>
+            </goals>
+            <phase>package</phase>
+            <configuration>
+              <descriptorRefs>
+                <descriptorRef>jar-with-dependencies</descriptorRef>
+              </descriptorRefs>
+              <archive>
+                <manifest>
+                  <mainClass>io.jenkins.tools.warpackager.cli.Main</mainClass>
+                </manifest>
+              </archive>
+            </configuration>
+          </execution>
+        </executions>
+      </plugin>
+    </plugins>
+  </build>
+   
+</project>
